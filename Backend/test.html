@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test</title>
+    <!-- Include the Socket.IO client library -->
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        // Connect to the Socket.IO server
+        const socket = io('http://localhost:5000'); // Adjust the URL if necessary
+
+        // When the connection is established
+        socket.on('connect', () => {
+            console.log('Connected to server');
+            socket.send('Hello from the Arnav!'); // Send a message to the server
+        });
+
+        // When a response is received from the server
+        socket.on('response', (data) => {
+            console.log('Received:', data); // Log the response from the server
+        });
+
+        // When the connection is closed
+        socket.on('disconnect', () => {
+            console.log('Disconnected from server');
+        });
+    </script>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+</body>
+</html>
