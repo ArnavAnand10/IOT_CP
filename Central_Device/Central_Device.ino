@@ -6,7 +6,7 @@
 #include <BLEClient.h>
 
 #define WIFI_SSID "a"              // Replace with your WiFi SSID
-#define WIFI_PASSWORD "12344321"   // Replace with your WiFi password
+#define WIFI_PASSWORD "Aditri.s29"   // Replace with your WiFi password
 #define SERVER_URL "http://192.168.38.206:5000/api/data"  // Replace with your server's IP address and endpoint
 
 #define SERVICE_UUID "df67ff1a-718f-11e7-8cf7-a6006ad3dba0"
@@ -43,7 +43,7 @@ void postData() {
         HTTPClient http;
         http.begin(SERVER_URL);
         http.addHeader("Content-Type", "application/json");
-
+  
         // Construct JSON payload
         String jsonPayload = "{ \"rssi_values\": [";
         for (int i = 0; i < currentIndex; i++) {
